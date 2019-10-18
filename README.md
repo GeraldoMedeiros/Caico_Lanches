@@ -1,0 +1,2 @@
+# Caico_Lanches
+O objetivo geral do nosso sistema web é permitir um ambiente intuitivo para que os usuários possam fazer seus pedidos com facilidade e rapidez. O cadastro de usuário é relativamente simples e seguro, e o foco da plataforma é despertar o interesse das pessoas que tem pouco tempo livre para se deslocar para uma lanchonete, tendo em vista as questões de trânsito e segurança da cidade.
