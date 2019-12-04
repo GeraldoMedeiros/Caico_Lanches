@@ -20,4 +20,6 @@ urlpatterns = [
     path('pedidoCli/', include('pedidoCli.urls')),
     path('admin/', admin.site.urls),
     path('', include('pedidoCli.urls')),
+    path('cadastroEmp/', include('cadastroEmp.urls')),
+    path('', include('cadastroEmp.urls')),
 ]
