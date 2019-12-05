@@ -10,7 +10,7 @@ class Cliente(models.Model):
     fone = models.CharField(max_length=11)
     login = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
-    endereco = models.ForeignKey("Endereco", on_delete=models.PROTECT)
+    #endereco = models.ForeignKey("Endereco", on_delete=models.PROTECT)
 
 
 class Endereco(models.Model):
