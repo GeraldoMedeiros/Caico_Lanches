@@ -1,0 +1,75 @@
+{% extends "cadastroEmp/_layouts/base.html" %}
+
+{% block title %}Lista de Estabelecimentos{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lista de Estabelecimento</h5>
+
+          {% if estabelecimentos|length > 0 %}
+            <p class="card-text">
+              Aqui está a lista de <code>Estabelecimentos</code> cadastrados.
+            </p>
+
+            <table class="table">
+              <thead class="thead-dark">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Nome Fantasia</th>
+                <th scope="col">Razão social</th>
+                <th scope="col">CNPJ</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Login</th>
+                <th scope="col">Password</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Responsável</th>
+                <th scope="col" class="text-center">Ações</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for estabelecimento in estabelecimentos %}
+                <tr>
+                  <th scope="row">{{ estabelecimento.nomeFrant }}</th>
+                  <td>{{ estabelecimento.nomeFrant }}</td>
+                  <td>{{ estabelecimento.social }}</td>
+                  <td>{{ estabelecimento.cnpj }}</td>
+                  <td>{{ estabelecimento.fone }}</td>
+                  <td>{{ estabelecimento.login }}</td>
+                  <td>{{ estabelecimento.password }}</td>
+                  <td>{{ estabelecimento.endereco }}</td>
+                  <td>{{ estabelecimento.responsavel }}</td>
+                  <td class="text-center">
+                    <a href="{% url 'cadastroEmp:atualiza_estabelecimento' pk=estabelecimento.id %}"
+                       class="btn btn-primary">
+                      Atualizar
+                    </a>
+                    <a href="{% url 'cadastroEmp:deleta_estabelecimento' pk=estabelecimento.id %}"
+                      class="btn btn-danger">
+                      Excluir
+                    </a>
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+        {% else %}
+          <div class="text-center mt-5 mb-5 jumbotron">
+            <h5>Nenhum <code>Estabelecimento</code> cadastrado ainda.</h5>
+          </div>
+        {% endif %}
+          <hr />
+          <div class="text-right">
+            <a href="{% url 'cadastroEmp:cadastra_estabelecimento' %}" class="btn btn-primary">
+              Cadastrar Estabelecimento
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
