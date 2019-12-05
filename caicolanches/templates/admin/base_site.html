@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Administração do site') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Administração do Caicó Lanches</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
