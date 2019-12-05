@@ -1,0 +1,41 @@
+<!-- Estendemos do template base -->
+{% extends "cadastroEmp/_layouts/base.html" %}
+
+<!-- Bloco que define o <title></title> da nossa página -->
+{% block title %}Página Inicial{% endblock %}
+
+<!-- Bloco de conteúdo da nossa página -->
+{% block conteudo %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cadastrar Estabelecimento</h5>
+          <p class="card-text">
+            Cadastre aqui um novo <code>Estabelecimento</code>.
+          </p>
+          <a href="{% url 'cadastroEmp:cadastra_estabelecimento' %}"
+             class="btn btn-primary">
+            Novo Estabelecimento
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lista de Estabelecimentos</h5>
+          <p class="card-text">
+            Veja aqui a lista de <code>Estabelecimentos</code> cadastrados.
+          </p>
+          <a href="{% url 'cadastroEmp:lista_estabelecimentos' %}"
+             class="btn btn-primary">
+            Vá para Lista
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
