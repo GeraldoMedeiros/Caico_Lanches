@@ -16,5 +16,4 @@ class InsereClienteForm(forms.ModelForm):
             'fone',
             'login',
             'password',
-            'endereco',
         ]

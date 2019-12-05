@@ -1,11 +1,38 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, UpdateView, CreateView, DeleteView
-# Create your views here.
+from .models import Cliente
+from .forms import InsereClienteForm
 
 
-def index(request):
-    return HttpResponse("Em desenvolvimento")
+class IndexTemplateView(TemplateView):
+    template_name = "pedidoCli/index.html"
 
-# class ReceiverForm(forms.ModelForm):
-#    phone_number = forms.RegexField(regex=r'\d{10,11}$', error_message = ("Entre com um número no formato: 'xx987654321'"))
+
+class ClienteListView(ListView):
+    template_name = "pedidoCli/lista.html"
+    model = Cliente
+    context_object_name = 'clientes'
+
+
+class ClienteCreateView(CreateView):
+    template_name = "pedidoCli/cria.html"
+    model = Cliente
+    form_class = InsereClienteForm
+    success_url = reverse_lazy("pedidoCli:lista_clientes")
+
+
+class ClienteUpdateView(UpdateView):
+    template_name = "pedidoCli/atualiza.html"
+    model = Cliente
+    fields = '__all__'
+    context_object_name = 'cliente'
+    success_url = reverse_lazy("pedidoCli:lista_clientes")
+
+
+class ClienteDeleteView(DeleteView):
+    template_name = "pedidoCli/exclui.html"
+    model = Cliente
+    context_object_name = 'cliente'
+    success_url = reverse_lazy("pedidoCli:lista_clientes")
