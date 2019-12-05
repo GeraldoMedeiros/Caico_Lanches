@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Página do cliente em desenvolvimento")
+    return HttpResponse("Página do cliente em desenvolvimento!")
 
 
 #class ReceiverForm(forms.ModelForm):
