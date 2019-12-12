@@ -20,3 +20,9 @@ class Endereco(models.Model):
     cidade = models.CharField(max_length=100)
     estado = models.CharField(max_length=100)
     cep = models.CharField(max_length=8)
+
+
+class Produto(models.Model):
+    nome = models.CharField(max_length=255)
+    descricao = models.CharField(max_length=255)
+    preco = models.CharField (max_length=50)
