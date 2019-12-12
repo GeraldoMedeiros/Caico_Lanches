@@ -1,6 +1,6 @@
 from django.urls import path
 from pedidoCli.views import IndexTemplateView, ClienteListView, ClienteUpdateView, ClienteCreateView, ClienteDeleteView
-
+from pedidoCli.views import ProdutoCreateView
 
 from . import views
 

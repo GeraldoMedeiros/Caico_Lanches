@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, UpdateView, CreateView, DeleteView
-from .models import Cliente
-from .forms import InsereClienteForm
+from .models import Cliente, Produto
+from .forms import InsereClienteForm, InsereProdutoForm
 
 
 class IndexTemplateView(TemplateView):
@@ -42,4 +42,4 @@ class ProdutoCreateView(CreateView):
     template_name = "pedidoCli/criapro.html"
     model = Produto
     form_class = InsereProdutoForm
-    success_url = reverse_lazy("pedidoCli:lista_clientes")
+    success_url = reverse_lazy("pedidoCli:lista_produtos")
