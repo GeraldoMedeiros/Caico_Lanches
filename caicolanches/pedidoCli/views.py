@@ -36,3 +36,10 @@ class ClienteDeleteView(DeleteView):
     model = Cliente
     context_object_name = 'cliente'
     success_url = reverse_lazy("pedidoCli:lista_clientes")
+
+
+class ProdutoCreateView(CreateView):
+    template_name = "pedidoCli/criapro.html"
+    model = Produto
+    form_class = InsereProdutoForm
+    success_url = reverse_lazy("pedidoCli:lista_clientes")

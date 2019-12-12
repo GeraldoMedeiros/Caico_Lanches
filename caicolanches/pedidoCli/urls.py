@@ -16,5 +16,7 @@ urlpatterns = [
 
     path('cliente/excluir/<pk>', ClienteDeleteView.as_view(), name="deleta_cliente"),
 
+    path('produto/cadastrar', ProdutoCreateView.as_view(), name="cadastra_produto"),
+
 
 ]
