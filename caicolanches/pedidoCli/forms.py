@@ -19,3 +19,13 @@ class InsereClienteForm(forms.ModelForm):
             'login',
             'password',
         ]
+class InsereProdutoForm(forms.ModelForm):
+
+    class Meta:
+        model = Produto
+
+        fields = [
+            'nome',
+            'descricao',
+            'preco',
+        ]
