@@ -38,8 +38,31 @@ class ClienteDeleteView(DeleteView):
     success_url = reverse_lazy("pedidoCli:lista_clientes")
 
 
+##PRODUTOS VIEWS##
+
 class ProdutoCreateView(CreateView):
     template_name = "pedidoCli/criapro.html"
     model = Produto
     form_class = InsereProdutoForm
     success_url = reverse_lazy("pedidoCli:lista_produtos")
+
+
+class ProdutoDeleteView(DeleteView):
+    template_name = "pedidoCli/excluipro.html"
+    model = Produto
+    context_object_name = 'produto'
+    success_url = reverse_lazy("pedidoCli:lista_produtos")
+
+
+class ProdutoUpdateView(UpdateView):
+    template_name = "pedidoCli/atualizapro.html"
+    model = Produto
+    fields = '__all__'
+    context_object_name = 'produto'
+    success_url = reverse_lazy("pedidoCli:lista_produtos")
+
+
+class ProdutoListView(ListView):
+    template_name = "pedidoCli/listapro.html"
+    model = Produto
+    context_object_name = 'produtos'
