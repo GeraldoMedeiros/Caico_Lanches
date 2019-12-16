@@ -10,7 +10,7 @@
         <div class="card-body">
           <h5 class="card-title">Lista de Produto</h5>
 
-          {% if prosutos|length > 0 %}
+          {% if produtos|length > 0 %}
             <p class="card-text">
               Aqui está a lista de <code>Produtos</code> cadastrados.
             </p>
@@ -48,7 +48,7 @@
             </table>
         {% else %}
           <div class="text-center mt-5 mb-5 jumbotron">
-            <h5>Nenhum <code>Produto</code> cadastrado ainda.</h5>
+            <h5>Nenhum <code>Produto</code> foi cadastrado.</h5>
           </div>
         {% endif %}
           <hr />
